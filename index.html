@@ -10,6 +10,32 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-    
+    <header id="header-container">
+        <img src="./assets/Vector.png" alt="Alura-latam-logo">
+    </header>
+    <section id="encrypter-container">
+        <div class="encrypter-input-container">
+            <textarea type="text" name="textToEncrypt" id="textToEncrypt" placeholder="Ingrese el texto aqui"></textarea>
+            <div class="warning-message">
+                <img src="./assets/warning.png">
+                <p>Solo letras minúsculas y sin acentos</p>
+            </div>
+            <div class="encrypter-buttons">
+                <button class="encrypt-Button">Encriptar</button>
+                <button class="unEncrypt-Button">Desencriptar</button>
+            </div>
+        </div>
+        <div class="result-encryption-container">
+            <div class="encryption-not-found">
+                <img src="./assets/Muñeco.png" alt="Doll">
+                <h3 class="notFound-title">Ningún mensaje fue encontrado</h3>
+                <p class="notFound-message">Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>
+        </div>
+    </section>
+    <footer id="footer-container">
+        <h1>Developed by Omar Contreras & Deiber Verano</h1>
+        <h3>ONE - Alura Latam 2022</h3>
+    </footer>
 </body>
 </html>

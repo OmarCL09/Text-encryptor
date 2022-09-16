@@ -1,0 +1,194 @@
+/*Importations of font families*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+/*-----------------------------*/
+:root{
+    --color1: #DCD0C0;
+    --color2: #C0B283;
+    --color3: #373737;
+    --color4: #343A40;
+}
+/*General configurations of the body and extras*/
+body{
+    background-color: var(--color1);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+/*Styles of the header*/
+#header-container{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    min-height: 60px;
+}
+#header-container img{
+    margin-left: 5%;
+}
+/*Styles of the encrypter section*/
+#encrypter-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    width: 80%;
+    height: 80vh;
+    gap: 8%;
+    z-index: 1;
+}
+.encrypter-input-container, .result-encryption-container{
+    height: 100%;
+    border-radius: 32px;
+}
+.encrypter-input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+.result-encryption-container{
+    background-color: var(--color2);
+    border: 1px solid #000000;
+    width: 30%;
+}
+.encryption-not-found{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.notFound-title{
+    width: 75%;
+    font-size: 1.8em;
+    margin-bottom: 0;
+    color: var(--color4);
+}
+.notFound-message{
+    width: 75%;
+}
+#textToEncrypt{
+    font-size: 1.5em;
+    padding: 6% 2% 0% 9%;
+    width: 75%;
+    height: 85%;
+    border: 1px solid black;
+    border-radius: 31px;
+    resize: none;
+    background: none;
+    color: var(--color3);
+    font-weight: bold;
+}
+#textToEncrypt::placeholder{
+    font-weight: bold;
+    color: var(--color3);
+}
+.warning-message{
+    display: flex;
+    align-items: center;
+    height: 27px;
+    width: 83%;
+    margin: 10px 0px;
+}
+.warning-message img{
+    height: 100%;
+}
+.encrypter-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 87%;
+    height: 10vh;
+    gap: 10%;
+}
+.encrypter-buttons button{
+    width: 50%;
+    padding: 5%;
+    border-radius: 25px;
+    border: 0.5px solid black;
+    box-shadow: 0px 10px 3px 0px rgba(0,0,0,0.1);
+    transition: .2s;
+}
+.encrypter-buttons button:hover{
+    transform: scale(0.97);
+    border-radius: 15px;
+}
+.encrypter-buttons button:first-child{
+    font-weight: bold;
+    background-color: var(--color2);
+    cursor: pointer;
+    color: black;
+}
+.encrypter-buttons button:last-child{
+    font-weight: bold;
+    background-color: var(--color3);
+    cursor: pointer;
+    color: white;
+}
+/*Styles for the footer*/
+#footer-container{
+    height: 13vh;
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#footer-container h1{
+    font-size: 1.5em;
+    margin: 0;
+}
+/*Responsive for devices*/
+@media(max-height:625px){
+    .encrypter-buttons{
+        height: 25vh;
+    }
+    .encryption-not-found img{
+        height: 40%;
+    }
+}
+@media(max-width: 1300px){
+    .result-encryption-container{
+        width: 40%;
+    }
+}
+@media(max-width: 800px){
+    #encrypter-container{
+        margin-top: 25%;
+        margin-bottom: 15%;
+        height: 150vh;
+        flex-direction: column;
+    }
+    .encrypter-input-container{
+        min-height: 75vh;
+        width: 100%;
+    }
+    .result-encryption-container{
+        width: 100%;
+    }
+    #header-container img{
+        display:none;
+    }
+    .encryption-not-found{
+        overflow: hidden;
+    }
+}
+@media(max-width: 700px){
+    #footer-container h1, h3{
+        text-align: center;
+        font-size: 1em;
+    }
+}
+@media(max-width: 400px){
+    #encrypter-container{
+        width: 100%;
+    }
+}
