@@ -21,15 +21,19 @@
                 <p>Solo letras minúsculas y sin acentos</p>
             </div>
             <div class="encrypter-buttons">
-                <button class="encrypt-Button">Encriptar</button>
-                <button class="unEncrypt-Button">Desencriptar</button>
+                <button class="encrypt-Button" id="encryptButton">Encriptar</button>
+                <button class="unEncrypt-Button" id="desencryptButton">Desencriptar</button>
             </div>
         </div>
         <div class="result-encryption-container">
-            <div class="encryption-not-found">
+            <div class="encryption-not-found" id="encryption-not-found">
                 <img src="./assets/Muñeco.png" alt="Doll">
                 <h3 class="notFound-title">Ningún mensaje fue encontrado</h3>
                 <p class="notFound-message">Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>
+            <div class="encryption-found disabled" id="encryption-found" >
+                <p class="found-text " id="found-text"> </p>
+                <button class="copy-text-button" id="copy-text-button">Copiar</button>
             </div>
         </div>
     </section>
@@ -37,5 +41,6 @@
         <h1>Developed by Omar Contreras & Deiber Verano</h1>
         <h3>ONE - Alura Latam 2022</h3>
     </footer>
+    <script src="./js/encryptor.js"></script>
 </body>
 </html>

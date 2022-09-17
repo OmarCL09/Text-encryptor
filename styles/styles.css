@@ -6,6 +6,8 @@
     --color2: #C0B283;
     --color3: #373737;
     --color4: #343A40;
+    --color5: #495057;
+    --color6: #0A3871;
 }
 /*General configurations of the body and extras*/
 body{
@@ -43,6 +45,7 @@ body::-webkit-scrollbar {
 }
 .encrypter-input-container, .result-encryption-container{
     height: 100%;
+    max-height: 700px;
     border-radius: 32px;
 }
 .encrypter-input-container{
@@ -89,6 +92,9 @@ body::-webkit-scrollbar {
 #textToEncrypt::placeholder{
     font-weight: bold;
     color: var(--color3);
+}
+#textToEncrypt:focus{
+    outline: none;
 }
 .warning-message{
     display: flex;
@@ -146,6 +152,46 @@ body::-webkit-scrollbar {
     font-size: 1.5em;
     margin: 0;
 }
+.encryption-found{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.found-text{
+    display: flex;
+    color: var(--color5);
+    font-size: 1.4em;
+    margin: 7% 0 0 3%;
+    text-align: left;
+    width: 80%;
+    height: 75%;
+    overflow-y: scroll;
+}
+.found-text::-webkit-scrollbar {
+    display: none;
+}
+.copy-text-button{
+    color: white;
+    width: 50%;
+    padding: 5%;
+    border-radius: 25px;
+    border: 0.5px solid var(--color1);
+    box-shadow: 0px 10px 3px 0px rgba(0,0,0,0.1);
+    margin-bottom: 10%;
+    background: var(--color4);
+    cursor: pointer;
+    transition: .2s;
+}
+.copy-text-button:hover{
+    color: white;
+    border-radius: 25px;
+    border: 0.5px solid white;
+    margin-bottom: 10%;
+    background-color: var(--color6);
+}
 /*Responsive for devices*/
 @media(max-height:625px){
     .encrypter-buttons{
@@ -173,6 +219,7 @@ body::-webkit-scrollbar {
     }
     .result-encryption-container{
         width: 100%;
+        border-radius: 0;
     }
     #header-container img{
         display:none;
@@ -191,4 +238,8 @@ body::-webkit-scrollbar {
     #encrypter-container{
         width: 100%;
     }
+}
+/*--Extra configurations--*/
+.disabled{
+    display: none;
 }

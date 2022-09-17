@@ -1,3 +1,15 @@
+//Selectors of the DOM  
+let encryptButton = document.querySelector("#encryptButton");
+let desencryptButton = document.querySelector("#desencryptButton");
+
+let containerEncryptedText = document.querySelector("#encryption-found");
+let containerNotFoundText = document.querySelector("#encryption-not-found");
+let encryptedTextInScreen = document.querySelector("#found-text");
+
+
+let copyTextButton = document.querySelector("#copy-text-button");
+
+//Encryptor and Decryptor functions
 const encrypterData = {
     a:'ai',
     e:'enter',
@@ -27,18 +39,46 @@ function encrypt(stringToEncrypt) {
     return encryptedString;
 }
 
-function desencrypt(stringToDesencryp) {
-    for(let i = 0; i <= stringToDesencryp.length; i++){
+function desencrypt(stringToDesencrypt) {
+    for(let i = 0; i <= stringToDesencrypt.length; i++){
         for(let key in desencrypterData) {
-            if(stringToDesencryp.includes(key)){
+            if(stringToDesencrypt.includes(key)){
                 let toReplaceString = key;
-                stringToDesencryp = stringToDesencryp.replace(toReplaceString, desencrypterData[key] ) 
+                stringToDesencrypt = stringToDesencrypt.replace(toReplaceString, desencrypterData[key] ) 
             }
         }
     }
-    return stringToDesencryp;
+    return stringToDesencrypt;
 }
 
-const encryptResult = 'fenterlimescimesdaidenters poberr enternfrenterntair enterstenter dentersaifimesober y haibenterrlober cobernclufatimesdober cobern enterximestober!';
-const desencryptResult = desencrypt(encryptResult)
-console.log(desencryptResult)
+encryptButton.addEventListener("click",(e)=>{
+    let textToEncrypt = document.querySelector("#textToEncrypt").value;
+
+    containerNotFoundText.classList.add('disabled');
+    containerEncryptedText.classList.remove('disabled');
+
+    encryptedTextInScreen.innerHTML = encrypt(textToEncrypt);
+})
+
+desencryptButton.addEventListener("click",(e)=>{
+    let textToDesencrypt = document.querySelector("#textToEncrypt").value;
+
+    containerNotFoundText.classList.add('disabled');
+    containerEncryptedText.classList.remove('disabled');
+
+    encryptedTextInScreen.innerHTML = desencrypt(textToDesencrypt);
+    
+})
+
+copyTextButton.addEventListener("click",(e)=>{
+    e.preventDefault();
+    let text = document.querySelector("#found-text").textContent;
+ 
+    navigator.clipboard.writeText(text)
+    .then(() => {
+        console.log('Text copied to clipboard');
+    })
+    .catch(err => {
+        console.error('Error in copying text: ', err);
+    });
+})
